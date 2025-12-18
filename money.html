@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jessica Animation</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: "Arial", sans-serif;
+      }
+
+      .container {
+        perspective: 1000px;
+      }
+
+      h1 {
+        font-size: 4rem;
+        margin: 0;
+        background: linear-gradient(45deg, #ff006e, #00f5ff, #ffbe0b, #ff006e);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradientShift 3s ease infinite,
+          wobble 2s ease-in-out infinite;
+        letter-spacing: 3px;
+        text-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes wobble {
+        0%,
+        100% {
+          transform: rotateZ(0deg) scale(1);
+        }
+        25% {
+          transform: rotateZ(2deg) scale(1.05);
+        }
+        50% {
+          transform: rotateZ(-2deg) scale(1);
+        }
+        75% {
+          transform: rotateZ(2deg) scale(1.05);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>jessica</h1>
+    </div>
+  </body>
+</html>
